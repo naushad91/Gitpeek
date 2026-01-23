@@ -19,6 +19,7 @@ class SearchVC: UIViewController {
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
+        createDismissKeyboardTapGesture()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +31,10 @@ class SearchVC: UIViewController {
 //        usernameTextField.becomeFirstResponder()
 //    }
 
+    func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
 
     func configureLogoImageView() {
         view.addSubview(logoImageView)
