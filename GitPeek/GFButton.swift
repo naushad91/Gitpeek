@@ -9,7 +9,6 @@ import UIKit
 
 class GFButton: UIButton {
 
-    class GFButton: UIButton {
 
         override init(frame: CGRect) {
             super.init(frame: frame)
@@ -34,7 +33,7 @@ class GFButton: UIButton {
             titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)// Dynamic font
             translatesAutoresizingMaskIntoConstraints = false // Enable AutoLayout
         }
-    }
+    
 
     /*
     // Only override draw() if you perform custom drawing.
