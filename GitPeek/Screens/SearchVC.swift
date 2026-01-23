@@ -29,11 +29,9 @@ class SearchVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+       
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        usernameTextField.becomeFirstResponder()
-//    }
+
 
     func createDismissKeyboardTapGesture() {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
@@ -101,12 +99,3 @@ extension SearchVC: UITextFieldDelegate {
         return true
     }
 }
-/*
-// MARK: - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destination.
-    // Pass the selected object to the new view controller.
-}
-*/

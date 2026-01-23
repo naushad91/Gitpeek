@@ -1,0 +1,35 @@
+//
+//  User.swift
+//  GitPeek
+//
+//  Created by Naushad Ali Khan on 24/01/26.
+//
+
+import Foundation
+struct User: Codable {
+    let userName: String
+    let avatarURL: String
+    let name: String?
+    let location: String?
+    let bio: String?
+    let publicRepos: Int
+    let publicGists: Int
+    let profileURL: String
+    let following: Int
+    let followers: Int
+    let createdAt: String
+
+    enum CodingKeys: String, CodingKey {
+        case userName     = "login"
+        case avatarURL    = "avatar_url"
+        case name
+        case location
+        case bio
+        case publicRepos  = "public_repos"
+        case publicGists  = "public_gists"
+        case profileURL  = "html_url"
+        case following
+        case followers
+        case createdAt   = "created_at"
+    }
+}
