@@ -8,7 +8,7 @@
 import Foundation
 struct User: Codable {
     let userName: String
-    let avatarURL: String
+    let userAvatar: String
     let name: String?
     let location: String?
     let bio: String?
@@ -21,7 +21,7 @@ struct User: Codable {
 
     enum CodingKeys: String, CodingKey {
         case userName     = "login"
-        case avatarURL    = "avatar_url"
+        case userAvatar   = "avatar_url"
         case name
         case location
         case bio

@@ -17,7 +17,7 @@ enum GFError: Error, LocalizedError{
     var errorDescription: String? {
         switch self {
         case .invalidUsername:
-            return "This username created an invalid request. Please try again."
+            return "This username created an invalid request. May be username doesn't exist enter proper username."
         case .unableToComplete:
             return "Unable to complete your request. Please check your internet connection."
         case .invalidResponse:
