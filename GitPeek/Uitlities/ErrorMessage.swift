@@ -5,7 +5,9 @@
 //  Created by Naushad Ali Khan on 25/01/26.
 //
 
-enum GFError: Error, LocalizedError {
+import Foundation
+
+enum GFError: Error, LocalizedError{
     
     case invalidUsername
     case unableToComplete

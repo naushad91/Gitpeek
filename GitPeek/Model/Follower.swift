@@ -6,7 +6,8 @@
 //
 
 import Foundation
-struct Follower: Codable {
+
+struct Follower: Codable, Sendable {
     let userName: String
     let userAvatar: String
 
@@ -15,3 +16,6 @@ struct Follower: Codable {
         case userAvatar = "avatar_url"
     }
 }
+
+// Make the Hashable conformance explicitly nonisolated so it can satisfy Sendable requirements
+nonisolated extension Follower: Hashable {}
