@@ -10,9 +10,9 @@ import Foundation
 struct User: Codable, Sendable {
     let userName: String
     let userAvatar: String
-    let name: String?
-    let location: String?
-    let bio: String?
+    var name: String?
+    var location: String?
+    var bio: String?
     let publicRepos: Int
     let publicGists: Int
     let profileURL: String
