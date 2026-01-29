@@ -10,12 +10,13 @@ import UIKit
 class UserInfoVC: UIViewController {
 
     var username: String!
-
+    let headerView = UIView()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureNavigationBar()
         getUserInfo()
+        layoutUI()
     }
 
     private func configureNavigationBar() {
@@ -45,6 +46,20 @@ class UserInfoVC: UIViewController {
                 )
             }
         }
+    }
+    
+    func layoutUI() {
+        view.addSubview(headerView)
+        
+        headerView.backgroundColor = .systemPink
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            headerView.heightAnchor.constraint(equalToConstant: 180)
+        ])
     }
 
     @objc private func dismissVC() {
