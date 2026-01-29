@@ -138,8 +138,10 @@ extension FollowerListVC: UICollectionViewDelegate {
         let activeArray = isSearching ? filteredFollowers : followers
         let user = activeArray[indexPath.row]
         let profileVC = UserInfoVC()
-        present(profileVC,animated: true)
-    }
+        profileVC.username = user.userName
+        let navController = UINavigationController(rootViewController: profileVC)
+        present(navController, animated: true)
+        }
 }
 
 extension FollowerListVC: UISearchResultsUpdating , UISearchBarDelegate{

@@ -9,21 +9,46 @@ import UIKit
 
 class UserInfoVC: UIViewController {
 
+    var username: String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBackground
+        configureNavigationBar()
+        getUserInfo()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configureNavigationBar() {
+        let doneButton = UIBarButtonItem(
+            title: "Done",
+            style: .prominent,
+            target: self,
+            action: #selector(dismissVC)
+        )
+        navigationItem.rightBarButtonItem = doneButton
     }
-    */
 
+    private func getUserInfo() {
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            guard let self = self else { return }
+
+            switch result {
+            case .success(let user):
+                // For now just print, later you’ll update UI
+                print(user)
+
+            case .failure(let error):
+                self.presentGFAlertOnMainThread(
+                    title: "Something went wrong",
+                    message: error.localizedDescription,
+                    buttonTitle: "OK"
+                )
+            }
+        }
+    }
+
+    @objc private func dismissVC() {
+        dismiss(animated: true)
+    }
 }
+

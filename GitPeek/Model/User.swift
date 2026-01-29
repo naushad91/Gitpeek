@@ -6,7 +6,8 @@
 //
 
 import Foundation
-struct User: Codable {
+
+struct User: Codable, Sendable {
     let userName: String
     let userAvatar: String
     let name: String?
@@ -27,9 +28,11 @@ struct User: Codable {
         case bio
         case publicRepos  = "public_repos"
         case publicGists  = "public_gists"
-        case profileURL  = "html_url"
+        case profileURL   = "html_url"
         case following
         case followers
-        case createdAt   = "created_at"
+        case createdAt    = "created_at"
     }
 }
+
+// Make conformances explicitly nonisolated so they can be used off the main actor and satisfy Sendable.
