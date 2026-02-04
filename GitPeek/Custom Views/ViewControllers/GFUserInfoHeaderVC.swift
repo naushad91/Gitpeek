@@ -36,7 +36,7 @@ class GFUserInfoHeaderVC: UIViewController {
     }
     
     private func configureUIElements() {
-        Task.init { avatarImageView.downloadImagefromCache(for: user.userName)     }
+        Task.init { avatarImageView.downloadImagefromCache(for: user.userAvatar)     }
         usernameLabel.text = user.userName
         nameLabel.text = user.name ?? "NA"
         locationLabel.text = user.location ?? "NA"
@@ -62,18 +62,18 @@ class GFUserInfoHeaderVC: UIViewController {
         
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
-            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             avatarImageView.heightAnchor.constraint(equalToConstant: 90),
             avatarImageView.widthAnchor.constraint(equalToConstant: 90),
             
             usernameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
             usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: gap),
-            usernameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            usernameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -padding),
             usernameLabel.heightAnchor.constraint(equalToConstant: 38),
             
             nameLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor, constant: 8),
             nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: gap),
-            nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -padding),
             nameLabel.heightAnchor.constraint(equalToConstant: 20),
             
             locationImageView.bottomAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
@@ -83,12 +83,12 @@ class GFUserInfoHeaderVC: UIViewController {
             
             locationLabel.centerYAnchor.constraint(equalTo: locationImageView.centerYAnchor),
             locationLabel.leadingAnchor.constraint(equalTo: locationImageView.trailingAnchor, constant: 5),
-            locationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            locationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -padding),
             locationLabel.heightAnchor.constraint(equalToConstant: 20),
             
             bioLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: gap),
             bioLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
-            bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             bioLabel.heightAnchor.constraint(equalToConstant: 60)
         ])
     }

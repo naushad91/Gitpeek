@@ -58,6 +58,7 @@ class UserInfoVC: UIViewController {
         view.addSubview(headerView)
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
+//        headerView.backgroundColor = .systemGray
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
