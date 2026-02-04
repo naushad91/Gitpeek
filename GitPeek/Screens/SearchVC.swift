@@ -69,9 +69,9 @@ class SearchVC: UIViewController {
         usernameTextField.delegate = self
             NSLayoutConstraint.activate([
             usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
-            usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            usernameTextField.heightAnchor.constraint(equalToConstant: 50)
+            usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 48),
+            usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -48),
+            usernameTextField.heightAnchor.constraint(equalToConstant: 52)
         ])
     }
     
