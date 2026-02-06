@@ -34,6 +34,11 @@ class GFButton: UIButton {
             translatesAutoresizingMaskIntoConstraints = false // Enable AutoLayout
         }
     
+    //Helper function
+    func set(backgroundColor: UIColor, title: String) {
+        self.backgroundColor = backgroundColor
+        setTitle(title, for: .normal)
+    }
 
     /*
     // Only override draw() if you perform custom drawing.
